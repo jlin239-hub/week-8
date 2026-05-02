@@ -4,159 +4,120 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Jeffrey Lin - Week 8</title>
+
   <style>
     :root{
-      --bg: #ffffff;
-      --text: #1f2937;
-      --muted: #6b7280;
-      --line: #e5e7eb;
-      --link: #2563eb;
-      --card: #f9fafb;
-      --shadow: 0 10px 25px rgba(0,0,0,.06);
-      --radius: 16px;
-      --max: 920px;
+      --text:#111827;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --card:#ffffff;
+      --bg:#f3f4f6;
+      --shadow: 0 10px 25px rgba(0,0,0,.08);
+      --radius:16px;
+      --max:1200px; /* wider so it fills the embed */
+      --accent:#2563eb;
     }
 
-    *{ box-sizing: border-box; }
+    *{ box-sizing:border-box; }
     body{
       margin:0;
       font-family: Arial, Helvetica, sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.6;
+      line-height:1.65;
     }
 
-    /* Top nav (Google Sites vibe) */
-    .topbar{
-      border-bottom: 1px solid var(--line);
-      background: #fff;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-    .topbar-inner{
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 10px 14px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-    }
-    .brand{
-      font-weight: 700;
-      letter-spacing: .2px;
-    }
-    .nav{
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: flex-end;
-    }
-    .nav a{
-      text-decoration: none;
-      color: var(--muted);
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid transparent;
-      font-size: 14px;
-    }
-    .nav a:hover{
-      border-color: var(--line);
-      color: var(--text);
-      background: #fafafa;
-    }
-    .nav a.active{
-      color: #111827;
-      border-color: var(--line);
-      background: #f3f4f6;
-    }
-
-    /* Header banner */
-    .hero{
-      height: 220px;
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
+    /* Banner header (keeps the “embed look” you liked) */
+    header.hero{
+      min-height: 190px;
+      display:flex;
+      align-items:flex-end;
+      justify-content:center;
       padding: 18px 14px;
-      /* Replace this image URL if you want */
       background:
-        linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.55)),
+        linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.58)),
         url("https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1600&q=70");
-      background-size: cover;
-      background-position: center;
+      background-size:cover;
+      background-position:center;
     }
+
     .hero-card{
       width: min(var(--max), 100%);
       background: rgba(255,255,255,.92);
-      border: 1px solid rgba(255,255,255,.6);
+      border: 1px solid rgba(255,255,255,.55);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
       padding: 14px 16px;
-      backdrop-filter: blur(6px);
+      backdrop-filter: blur(7px);
     }
-    .hero-title{
-      margin: 0 0 6px;
+
+    h1{
+      margin:0 0 8px;
       font-size: 26px;
-      line-height: 1.25;
+      line-height:1.25;
     }
-    .hero-meta{
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px 14px;
+
+    .meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-bottom: 6px;
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding: 4px 10px;
+      border-radius:999px;
+      background:#f3f4f6;
+      border:1px solid var(--line);
+      color:#374151;
+      font-size: 13px;
+    }
+
+    .subtle{
+      margin:0;
       color: var(--muted);
       font-size: 14px;
     }
-    .pill{
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: #f3f4f6;
-      border: 1px solid var(--line);
-      color: #374151;
-    }
 
-    /* Main content */
     main{
       max-width: var(--max);
       margin: 0 auto;
-      padding: 18px 14px 46px;
+      padding: 16px 14px 44px;
     }
+
     .section{
-      background: #fff;
+      background: var(--card);
       border: 1px solid var(--line);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      padding: 18px 18px 6px;
-      margin-top: 16px;
+      padding: 18px 18px 8px;
+      margin-top: 14px;
     }
+
     h2{
-      margin: 0 0 10px;
+      margin:0 0 10px;
       font-size: 18px;
       padding-bottom: 8px;
       border-bottom: 1px solid var(--line);
     }
+
     p{ margin: 0 0 12px; }
 
-    .subtle{
-      color: var(--muted);
-      font-size: 14px;
-    }
+    ul{ margin: 8px 0 12px 18px; }
 
-    /* Figure styling like your Week 4/5 pages */
     figure{
       margin: 12px 0 16px;
       padding: 12px;
-      background: var(--card);
+      background: #f9fafb;
       border: 1px solid var(--line);
       border-radius: 14px;
     }
     figure img{
-      width: 100%;
-      height: auto;
-      display: block;
+      width:100%;
+      height:auto;
+      display:block;
       border-radius: 12px;
     }
     figcaption{
@@ -166,32 +127,20 @@
     }
 
     .question-box{
-      padding: 14px 14px;
+      padding: 14px;
       border-radius: 14px;
       border: 1px solid #c7d2fe;
       background: #eef2ff;
-      color: #1f2937;
-      margin: 12px 0 10px;
-      font-weight: 600;
+      font-weight: 700;
     }
 
     .sources{
       padding: 12px 14px;
-      background: var(--card);
+      background: #f9fafb;
       border: 1px solid var(--line);
       border-radius: 14px;
-      margin: 12px 0 10px;
     }
-    .sources ul{
-      margin: 8px 0 0 18px;
-      padding: 0;
-    }
-    .sources li{
-      margin-bottom: 8px;
-      font-size: 14px;
-      color: #111827;
-      word-break: break-word;
-    }
+    .sources ul{ margin: 8px 0 0 18px; }
 
     .wordcount{
       margin-top: 10px;
@@ -201,100 +150,64 @@
       font-size: 14px;
     }
 
-    footer{
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 0 14px 24px;
-      color: var(--muted);
-      font-size: 13px;
-    }
+    a{ color: var(--accent); }
   </style>
 </head>
 
 <body>
-  <!-- Top navigation -->
-  <div class="topbar">
-    <div class="topbar-inner">
-      <div class="brand">Jeffrey Lin</div>
-      <div class="nav">
-        <!-- Update these links once you have each week hosted -->
-        <a href="#" title="Set to your Home page URL">Home</a>
-        <a href="#" title="Set to your Introduction page URL">Introduction</a>
-        <a href="#" title="Set to your Week 3 URL">Week 3</a>
-        <a href="#" title="Set to your Week 4 URL">Week 4</a>
-        <a href="#" title="Set to your Week 5 URL">Week 5</a>
-        <a href="#" title="Set to your Week 6 URL">Week 6</a>
-        <a href="#" title="Set to your Week 7 URL">Week 7</a>
-        <a class="active" href="#">Week 8</a>
-      </div>
-    </div>
-  </div>
 
-  <!-- Header banner -->
   <header class="hero">
     <div class="hero-card">
-      <h1 class="hero-title">Week 8: Environmental Politics — Why Policy Can Fail After It “Passes”</h1>
-      <div class="hero-meta">
+      <h1>Week 8: Environmental Politics — Why Policy Can Fail After It “Passes”</h1>
+      <div class="meta">
         <span class="pill">Date: March 4, 2026</span>
         <span class="pill">Reading: Miller, Chapter 24</span>
         <span class="pill">Topic: Environmental Politics</span>
       </div>
-      <p class="subtle" style="margin-top:10px;">
+      <p class="subtle">
         Weekly reflection responding to a discussion question, with solutions, tradeoffs, gaps, and a final question.
       </p>
     </div>
   </header>
 
   <main>
-    <!-- Main reflection -->
     <section class="section">
       <h2>Reflection on Miller Chapter 24</h2>
       <p>
-        Chapter 24 made it clear that climate action isn’t blocked by a lack of solutions as much as by how policy actually gets
-        made and enforced. Miller describes environmental policy as laws, regulations, and programs carried out by government
-        agencies, and he lays out a policy life cycle: problem recognition, formulation, implementation, and adjustment
-        (monitoring/evaluation). What hit me is what happens after a law passes: budgets have to be approved, agencies write the
-        regulations, and then the whole thing can get weakened by fragmentation, lobbying, and court fights. He also warns about
-        “foxes in charge of the henhouse” and the “revolving door effect,” where industries influence regulators from the inside.
-        That’s why long-term issues like climate can suffer in democracies that reward short-term thinking.
+        Chapter 24 made it clear that climate action isn’t blocked by a lack of solutions as much as by how policy actually
+        gets made and enforced. Miller describes environmental policy as laws, regulations, and programs carried out by
+        government agencies, and he lays out a policy life cycle: problem recognition, formulation, implementation, and
+        adjustment (monitoring/evaluation). What hit me is what happens after a law passes: budgets have to be approved,
+        agencies write the regulations, and then the whole thing can get weakened by fragmentation, lobbying, and court fights.
+        He also warns about “foxes in charge of the henhouse” and the “revolving door effect,” where industries influence
+        regulators from the inside. That’s why long-term issues like climate can suffer in democracies that reward short-term thinking.
       </p>
 
-      <!-- Optional: a banner image/figure like your other weeks -->
       <figure>
         <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=1600&q=70"
-             alt="Government building representing policy and regulation" />
+             alt="Government building representing policy and enforcement" />
         <figcaption>
-          Figure 1. Environmental policy depends on implementation and enforcement, not just passing laws.
-          <span class="subtle">(Replace image + caption/source if you want.)</span>
+          Figure 1. Passing a law is only one step; enforcement and implementation shape the real outcome.
+          (Optional: replace with your own image + caption/source.)
         </figcaption>
       </figure>
     </section>
 
-    <!-- Why it matters -->
     <section class="section">
       <h2>Why This Issue Matters to Me</h2>
-      <p class="subtle">
-        Paste your “why I care” paragraph here (3–6 sentences). Keep it personal + academic like Weeks 4–7.
-      </p>
+      <p><i>Paste your paragraph here.</i></p>
     </section>
 
-    <!-- Solutions, tradeoffs, gaps -->
     <section class="section">
       <h2>Thoughts: Solutions, Tradeoffs, and Gaps</h2>
-      <p class="subtle">
-        Use 2–3 solutions. For each: 1 advantage + 1 disadvantage (politics, speed, cost, fairness, feasibility).
-      </p>
       <ul>
         <li><b>Anti-capture design:</b> transparency rules, conflict-of-interest limits, longer “cooling off” periods, independent oversight.</li>
         <li><b>Durable enforcement:</b> stable agency funding, clear enforcement metrics, stronger penalties for noncompliance.</li>
         <li><b>Speed + legitimacy:</b> faster timelines without cutting meaningful public participation (especially affected communities).</li>
       </ul>
-      <p class="subtle">
-        <b>Gap in knowledge:</b> What information would help you judge which reforms really reduce capture and still move fast?
-      </p>
+      <p><b>Gap in knowledge:</b> <i>Paste 2–4 sentences here about what you still need to know (how to measure enforcement, what works politically, etc.).</i></p>
     </section>
 
-    <!-- Question -->
     <section class="section">
       <h2>Question</h2>
       <div class="question-box">
@@ -303,27 +216,19 @@
       <div class="wordcount"><b>Word Count:</b> ___</div>
     </section>
 
-    <!-- Sources -->
     <section class="section">
       <h2>Sources Used</h2>
       <div class="sources">
         <p class="subtle">
-          Only list sources you actually used beyond the assigned reading (and only cite if quoting).
-          Chicago style is fine as a basic bibliography list.
+          Only include outside sources if you used/quoted them. (Assigned readings usually don’t need citation unless you quote.)
         </p>
         <ul>
-          <li>Miller, G. Tyler, and Scott E. Spoolman. <i>Living in the Environment</i>. Chapter 24. (Assigned reading.)</li>
-          <li>[Outside source #1 — if you use/quote it]</li>
-          <li>[Outside source #2 — if you use/quote it]</li>
+          <li>Miller, G. Tyler, and Scott E. Spoolman. <i>Living in the Environment</i>. Chapter 24.</li>
+          <li>[Outside source — if used/quoted]</li>
         </ul>
       </div>
     </section>
   </main>
-/* EMBED CLEANUP */
-.topbar { display: none !important; }   /* removes the duplicate nav */
-.hero { height: 140px; }               /* shrink the hero so it’s not huge */
-  <footer>
-    Tip: Replace the “Home/Introduction/Week 3…” links once each page is hosted on GitHub Pages, so your nav works like your Google Sites menu.
-  </footer>
+
 </body>
 </html>

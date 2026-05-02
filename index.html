@@ -14,10 +14,9 @@
       --bg:#f3f4f6;
       --shadow: 0 10px 25px rgba(0,0,0,.08);
       --radius:16px;
-      --max:1200px; /* wider so it fills the embed */
+      --max:1200px;
       --accent:#2563eb;
     }
-
     *{ box-sizing:border-box; }
     body{
       margin:0;
@@ -27,7 +26,7 @@
       line-height:1.65;
     }
 
-    /* Banner header (keeps the “embed look” you liked) */
+    /* Banner header (kept). Remove this block too if you want NO banner. */
     header.hero{
       min-height: 190px;
       display:flex;
@@ -40,7 +39,6 @@
       background-size:cover;
       background-position:center;
     }
-
     .hero-card{
       width: min(var(--max), 100%);
       background: rgba(255,255,255,.92);
@@ -50,13 +48,11 @@
       padding: 14px 16px;
       backdrop-filter: blur(7px);
     }
-
     h1{
       margin:0 0 8px;
       font-size: 26px;
       line-height:1.25;
     }
-
     .meta{
       display:flex;
       flex-wrap:wrap;
@@ -74,7 +70,6 @@
       color:#374151;
       font-size: 13px;
     }
-
     .subtle{
       margin:0;
       color: var(--muted);
@@ -86,7 +81,6 @@
       margin: 0 auto;
       padding: 16px 14px 44px;
     }
-
     .section{
       background: var(--card);
       border: 1px solid var(--line);
@@ -95,16 +89,13 @@
       padding: 18px 18px 8px;
       margin-top: 14px;
     }
-
     h2{
       margin:0 0 10px;
       font-size: 18px;
       padding-bottom: 8px;
       border-bottom: 1px solid var(--line);
     }
-
     p{ margin: 0 0 12px; }
-
     ul{ margin: 8px 0 12px 18px; }
 
     figure{
@@ -125,7 +116,6 @@
       color: var(--muted);
       font-size: 13px;
     }
-
     .question-box{
       padding: 14px;
       border-radius: 14px;
@@ -133,7 +123,6 @@
       background: #eef2ff;
       font-weight: 700;
     }
-
     .sources{
       padding: 12px 14px;
       background: #f9fafb;
@@ -141,7 +130,6 @@
       border-radius: 14px;
     }
     .sources ul{ margin: 8px 0 0 18px; }
-
     .wordcount{
       margin-top: 10px;
       padding-top: 12px;
@@ -149,8 +137,10 @@
       color: var(--muted);
       font-size: 14px;
     }
-
     a{ color: var(--accent); }
+
+    /* SAFETY: if any nav accidentally exists, hide it */
+    .topbar, nav, .nav, .topbar-inner, .brand { display:none !important; }
   </style>
 </head>
 

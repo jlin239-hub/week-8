@@ -17,16 +17,26 @@
       --max:1200px;
       --accent:#2563eb;
     }
+
     *{ box-sizing:border-box; }
+    html, body{ height:100%; }
+
+    /* KEY FIX for Google Sites “full page embed”: we scroll inside the page */
     body{
       margin:0;
       font-family: Arial, Helvetica, sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height:1.65;
+      overflow: hidden;
+    }
+    #scroller{
+      height: 100vh;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      background: var(--bg);
     }
 
-    /* Banner header (kept). Remove this block too if you want NO banner. */
     header.hero{
       min-height: 190px;
       display:flex;
@@ -116,6 +126,7 @@
       color: var(--muted);
       font-size: 13px;
     }
+
     .question-box{
       padding: 14px;
       border-radius: 14px;
@@ -138,87 +149,96 @@
       font-size: 14px;
     }
     a{ color: var(--accent); }
-
-    /* SAFETY: if any nav accidentally exists, hide it */
-    .topbar, nav, .nav, .topbar-inner, .brand { display:none !important; }
   </style>
 </head>
 
 <body>
-
-  <header class="hero">
-    <div class="hero-card">
-      <h1>Week 8: Environmental Politics — Why Policy Can Fail After It “Passes”</h1>
-      <div class="meta">
-        <span class="pill">Date: March 4, 2026</span>
-        <span class="pill">Reading: Miller, Chapter 24</span>
-        <span class="pill">Topic: Environmental Politics</span>
-      </div>
-      <p class="subtle">
-        Weekly reflection responding to a discussion question, with solutions, tradeoffs, gaps, and a final question.
-      </p>
-    </div>
-  </header>
-
-  <main>
-    <section class="section">
-      <h2>Reflection on Miller Chapter 24</h2>
-      <p>
-        Chapter 24 made it clear that climate action isn’t blocked by a lack of solutions as much as by how policy actually
-        gets made and enforced. Miller describes environmental policy as laws, regulations, and programs carried out by
-        government agencies, and he lays out a policy life cycle: problem recognition, formulation, implementation, and
-        adjustment (monitoring/evaluation). What hit me is what happens after a law passes: budgets have to be approved,
-        agencies write the regulations, and then the whole thing can get weakened by fragmentation, lobbying, and court fights.
-        He also warns about “foxes in charge of the henhouse” and the “revolving door effect,” where industries influence
-        regulators from the inside. That’s why long-term issues like climate can suffer in democracies that reward short-term thinking.
-      </p>
-
-      <figure>
-        <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=1600&q=70"
-             alt="Government building representing policy and enforcement" />
-        <figcaption>
-          Figure 1. Passing a law is only one step; enforcement and implementation shape the real outcome.
-          (Optional: replace with your own image + caption/source.)
-        </figcaption>
-      </figure>
-    </section>
-
-    <section class="section">
-      <h2>Why This Issue Matters to Me</h2>
-      <p><i>Paste your paragraph here.</i></p>
-    </section>
-
-    <section class="section">
-      <h2>Thoughts: Solutions, Tradeoffs, and Gaps</h2>
-      <ul>
-        <li><b>Anti-capture design:</b> transparency rules, conflict-of-interest limits, longer “cooling off” periods, independent oversight.</li>
-        <li><b>Durable enforcement:</b> stable agency funding, clear enforcement metrics, stronger penalties for noncompliance.</li>
-        <li><b>Speed + legitimacy:</b> faster timelines without cutting meaningful public participation (especially affected communities).</li>
-      </ul>
-      <p><b>Gap in knowledge:</b> <i>Paste 2–4 sentences here about what you still need to know (how to measure enforcement, what works politically, etc.).</i></p>
-    </section>
-
-    <section class="section">
-      <h2>Question</h2>
-      <div class="question-box">
-        What policy design choices best prevent capture while still moving fast enough to cut emissions?
-      </div>
-      <div class="wordcount"><b>Word Count:</b> ___</div>
-    </section>
-
-    <section class="section">
-      <h2>Sources Used</h2>
-      <div class="sources">
+  <div id="scroller">
+    <header class="hero">
+      <div class="hero-card">
+        <h1>Week 8: Environmental Politics — Why Policy Can Fail After It “Passes”</h1>
+        <div class="meta">
+          <span class="pill">Date: March 4, 2026</span>
+          <span class="pill">Reading: Miller, Chapter 24</span>
+          <span class="pill">Topic: Environmental Politics</span>
+        </div>
         <p class="subtle">
-          Only include outside sources if you used/quoted them. (Assigned readings usually don’t need citation unless you quote.)
+          Weekly reflection responding to a discussion question, with solutions, tradeoffs, gaps, and a final question.
         </p>
-        <ul>
-          <li>Miller, G. Tyler, and Scott E. Spoolman. <i>Living in the Environment</i>. Chapter 24.</li>
-          <li>[Outside source — if used/quoted]</li>
-        </ul>
       </div>
-    </section>
-  </main>
+    </header>
 
+    <main>
+      <section class="section">
+        <h2>Reflection on Miller Chapter 24</h2>
+        <p>
+          Chapter 24 made it clear that climate action isn’t blocked by a lack of solutions as much as by how policy actually
+          gets made and enforced. Miller describes environmental policy as laws, regulations, and programs carried out by
+          government agencies, and he lays out a policy life cycle: problem recognition, formulation, implementation, and
+          adjustment (monitoring/evaluation). What hit me is what happens after a law passes: budgets have to be approved,
+          agencies write the regulations, and then the whole thing can get weakened by fragmentation, lobbying, and court fights.
+          He also warns about “foxes in charge of the henhouse” and the “revolving door effect,” where industries influence
+          regulators from the inside. That’s why long-term issues like climate can suffer in democracies that reward short-term thinking.
+        </p>
+
+        <figure>
+          <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=1600&q=70"
+               alt="Government building representing policy and enforcement" />
+          <figcaption>
+            Figure 1. Passing a law is only one step; enforcement and implementation shape the real outcome.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="section">
+        <h2>Why This Issue Matters to Me</h2>
+        <p>
+          This issue matters to me because it explains why climate policy can feel stuck even when people agree on basic goals.
+          If agencies are underfunded or influenced by the industries they regulate, rules can turn into headlines instead of real change.
+          The impacts are not evenly shared either. Communities with less money and less political power usually face more pollution and
+          have fewer options to avoid it. I want to understand what makes policy durable, not just announced, because that is the difference
+          between a plan that looks good on paper and one that actually cuts emissions and protects people.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>Thoughts: Solutions, Tradeoffs, and Gaps</h2>
+        <ul>
+          <li><b>Anti-capture design:</b> transparency rules, conflict-of-interest limits, longer “cooling off” periods, independent oversight.</li>
+          <li><b>Durable enforcement:</b> stable agency funding, clear enforcement metrics, stronger penalties for noncompliance.</li>
+          <li><b>Speed and legitimacy:</b> faster timelines without cutting meaningful public participation (especially affected communities).</li>
+        </ul>
+
+        <p>
+          The advantage of these approaches is that they make it harder for powerful interests to quietly weaken rules after public attention
+          moves on. They can also build more trust because enforcement becomes predictable instead of optional. The downside is that stronger
+          oversight and enforcement can be politically unpopular, slow to implement, and vulnerable to court challenges. There is also a real tension
+          between moving fast and doing the process in a way that feels fair and legitimate.
+        </p>
+
+        <p>
+          <b>Gap in knowledge:</b> I still don’t know which specific policy designs have the strongest evidence for reducing capture while still delivering
+          results quickly. I also want to learn how success should be measured, since passing a law is not the same as reducing emissions in the real world.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>Question</h2>
+        <div class="question-box">
+          What policy design choices best prevent capture while still moving fast enough to cut emissions?
+        </div>
+        <div class="wordcount"><b>Word Count:</b> 419</div>
+      </section>
+
+      <section class="section">
+        <h2>Sources Used</h2>
+        <div class="sources">
+          <ul>
+            <li>Miller, G. Tyler, and Scott E. Spoolman. <i>Living in the Environment</i>. Chapter 24.</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+  </div>
 </body>
 </html>
